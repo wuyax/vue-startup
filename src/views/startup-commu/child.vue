@@ -1,6 +1,6 @@
 <template>
   <div class="startup-communite-child">
-    <p class="child-title">{{title}},父组件props值：{{params}}</p>
+    <p class="child-title">{{title}}{{params}}</p>
     <p class="child-click" @click="childEmit()">点我父组件-1</p>
 
   </div>
@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      title: '我是子组件',
+      title: '我是子组件,父组件props值：',
       num: 0
     }
   },

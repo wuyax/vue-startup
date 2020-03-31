@@ -1,6 +1,6 @@
 <template>
   <div class="startup-communite">
-    <p class="parent-title">{{title}},子组件$emit值：{{content}}</p>
+    <p class="parent-title">{{title}}{{content}}</p>
     <p class="parent-click" @click="parentClick()">点我子组件+1</p>
     <childComp :params="childNum"  @parentWatch="parentWatch"></childComp>
   </div>
@@ -15,7 +15,7 @@ export default {
   props: {},
   data() {
     return {
-      title: '我是父组件',
+      title: '我是父组件,子组件$emit值：',
       content: 0,
       childNum: 0
     }
