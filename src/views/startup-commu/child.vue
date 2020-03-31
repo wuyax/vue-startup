@@ -13,7 +13,8 @@ export default {
   model: {},
   props: {
     params: {
-      type: Number
+      type: Number,
+      default: 0
     }
   },
   data() {
