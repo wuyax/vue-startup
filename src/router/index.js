@@ -28,6 +28,16 @@ const routes = [
     path: '/api',
     name: 'api',
     component: () => import('../views/startup-api/index.vue')
+  },
+  {
+    path: '/vuex',
+    name: 'vuex',
+    component: () => import('../views/startup-vuex/index.vue')
+  },
+  {
+    path: '/avuex',
+    name: 'avuex',
+    component: () => import('../views/startup-vuex/vuex-map.vue')
   }
 ]
 

@@ -10,6 +10,7 @@
   </div>
 </template>
 <script>
+import {mapState, mapMutations, mapActions} from 'vuex'
 // https://cn.vuejs.org/v2/style-guide/#组件-实例的选项的顺序-推荐
 export default {
   name: 'StartupVuex',
@@ -20,26 +21,26 @@ export default {
     return {}
   },
   computed: {
-    count() {
-      return this.$store.state.count
-    }
+    ...mapState(['count'])
   },
   watch: {},
   created() {},
   mounted() {},
   beforeDestroy() {},
   methods: {
+    ...mapMutations(['decrement', 'increment']),
+    ...mapActions(['decrementAsync', 'incrementAsync']),
     decrease() {
-      this.$store.commit('decrement')
+      this.decrement()
     },
     increase() {
-      this.$store.commit('increment')
+      this.increment()
     },
     decreaseAsync() {
-      this.$store.dispatch('decrementAsync')
+      this.decrementAsync()
     },
     increaseAsync() {
-      this.$store.dispatch('incrementAsync')
+      this.incrementAsync()
     }
   }
 }
