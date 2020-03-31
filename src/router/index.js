@@ -24,6 +24,11 @@ const routes = [
     name: 'communite',
     component: communite
   },
+  {
+    path: '/api',
+    name: 'api',
+    component: () => import('../views/startup-api/index.vue')
+  }
 ]
 
 const router = new VueRouter({
