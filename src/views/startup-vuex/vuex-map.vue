@@ -7,6 +7,10 @@
     <h2>Action</h2>
     <button @click="decreaseAsync">-(async)</button>
     <button @click="increaseAsync">+(async)</button>
+    <h2>Get Data</h2>
+    <button @click="getDataAsync">获取数据</button>
+    <p>name: {{remoteData.name}}</p>
+    <p>id: {{remoteData.id}}</p>
   </div>
 </template>
 <script>
@@ -21,7 +25,7 @@ export default {
     return {}
   },
   computed: {
-    ...mapState(['count'])
+    ...mapState(['count','remoteData'])
   },
   watch: {},
   created() {},
@@ -29,7 +33,7 @@ export default {
   beforeDestroy() {},
   methods: {
     ...mapMutations(['decrement', 'increment']),
-    ...mapActions(['decrementAsync', 'incrementAsync']),
+    ...mapActions(['decrementAsync', 'incrementAsync', 'getData']),
     decrease() {
       this.decrement()
     },
@@ -41,6 +45,9 @@ export default {
     },
     increaseAsync() {
       this.incrementAsync()
+    },
+    getDataAsync() {
+      this.getData()
     }
   }
 }

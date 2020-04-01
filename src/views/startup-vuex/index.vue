@@ -7,6 +7,10 @@
     <h2>Action</h2>
     <button @click="decreaseAsync">-(async)</button>
     <button @click="increaseAsync">+(async)</button>
+    <h2>Get Data</h2>
+    <button @click="getData">获取数据</button>
+    <p>name: {{remoteData.name}}</p>
+    <p>id: {{remoteData.id}}</p>
   </div>
 </template>
 <script>
@@ -22,6 +26,9 @@ export default {
   computed: {
     count() {
       return this.$store.state.count
+    },
+    remoteData() {
+      return this.$store.state.remoteData
     }
   },
   watch: {},
@@ -40,6 +47,9 @@ export default {
     },
     increaseAsync() {
       this.$store.dispatch('incrementAsync')
+    },
+    getData() {
+      this.$store.dispatch('getData')
     }
   }
 }
